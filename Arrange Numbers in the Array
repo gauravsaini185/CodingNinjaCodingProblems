@@ -1,0 +1,63 @@
+import java.util.*;
+
+class Seq{
+
+
+	public static int[] order(){
+	
+	Scanner scan = new Scanner(System.in);
+	int n = scan.nextInt();
+	int arr[] = new int[n];
+	int a,b;
+	int x=1;
+	int y=2;
+	if(n%2!=0){
+		a = (n+1)/2;	
+		b = n - a;
+		}
+	else {	a = n/2;	
+		b = a;
+		}
+	
+	
+	for(int i=0; i<a; i++){
+		arr[i] = x;
+		x = x+2; 
+	}
+		
+	for(int i = n-1; i >= n-b; i--){
+		arr[i]=y;
+		y = y + 2;
+	}
+	return arr;
+
+}
+
+
+
+public static void main(String args[]){
+
+	Scanner scan = new Scanner(System.in);
+	int testCase = scan.nextInt();
+	int[][] output = new int[testCase][];
+	for(int i=0;i<testCase;i++){
+		//int[] arr = order();
+		//output[i] = new int[arr.length];
+		output[i] = order();
+	}
+	
+	
+	   for (int[] row : output){
+
+            for (int x : row){
+                System.out.print(x + " ");
+    		}
+		System.out.println();
+}
+	
+	
+	
+	
+}
+
+}

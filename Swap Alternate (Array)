@@ -1,0 +1,57 @@
+import java.util.*;
+
+class Seq{
+
+
+	public static int[] order(){
+	
+	Scanner scan = new Scanner(System.in);
+	int n = scan.nextInt();
+	int arr[] = new int[n];
+	int ar[] = new int[n];
+	for(int i=0;i<n;i++){
+		arr[i] = scan.nextInt();
+	}
+	for(int i=0; i<n; i++){
+		if(i%2==0) {
+				if(i==(n-1)){
+						ar[i]=arr[i];}
+				else {
+					ar[i+1] = arr[i];}
+
+				}
+		else{
+			ar[i-1] = arr[i];}
+	}
+	
+	return ar;
+	
+}
+
+
+
+public static void main(String args[]){
+
+	Scanner scan = new Scanner(System.in);
+	int testCase = scan.nextInt();
+	
+	int[][] output = new int[testCase][];
+	for(int i=0;i<testCase;i++){
+		output[i] = order();
+	}
+	
+	
+	   for (int[] row : output){
+
+            for (int x : row){
+                System.out.print(x + " ");
+    		}
+		System.out.println();
+}
+	
+	
+	
+	
+}
+
+}

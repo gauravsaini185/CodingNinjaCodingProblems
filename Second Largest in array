@@ -1,0 +1,61 @@
+import java.util.*;
+
+class Seq{
+
+
+	public static int order(){
+	
+	Scanner scan = new Scanner(System.in);
+	int n = scan.nextInt();
+
+	if(n<=1){return -2147483648;}
+	
+	int arr[] = new int[n];
+	int small = -2147483648;
+	int max =-2147483648;
+
+	for(int i=0;i<n;i++){
+		arr[i] = scan.nextInt();
+	}
+
+	
+
+	for(int i =0;i<n;i++){
+		
+		if(arr[i]>max){
+			small = max;
+			max = arr[i];
+			}
+		else if(arr[i]<max && arr[i]>small){
+			small = arr[i];}
+		}
+	
+	return small;
+	
+}
+
+
+
+public static void main(String args[]){
+
+	Scanner scan = new Scanner(System.in);
+	int testCase = scan.nextInt();
+	
+	int[] output = new int[testCase];
+
+	for(int i=0;i<testCase;i++){
+		output[i] = order();
+	}
+	
+	
+	   for (int x : output){
+                System.out.println(x);
+    		}
+
+	
+	
+	
+	
+}
+
+}
